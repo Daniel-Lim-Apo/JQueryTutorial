@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grouped Color Changer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="color-group" id="group-1">
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+      </div>
+      <div class="color-group" id="group-2">
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+      </div>
+      <div class="color-group" id="group-3">
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+      </div>
+      <div class="color-group" id="group-4">
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+        <div class="color-box"></div>
+      </div>
+    </div>
+    <button class="change-color" data-group="#group-1">
+      Change Color Group 1
+    </button>
+    <button class="change-color" data-group="#group-2">
+      Change Color Group 2
+    </button>
+    <button class="change-color" data-group="#group-3">
+      Change Color Group 3
+    </button>
+    <button class="change-color" data-group="#group-4">
+      Change Color Group 4
+    </button>
+
+    <script src="app.js"></script>
+  </body>
+</html>

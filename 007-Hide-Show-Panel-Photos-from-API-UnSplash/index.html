@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Image Gallery</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #imageGallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .panel {
+        width: calc(33% - 10px); /* Adjust width for 3 columns */
+        margin-bottom: 15px;
+        display: none; /* Panels hidden initially */
+        flex-direction: column;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .panel img {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #ccc;
+      }
+      .panel div {
+        padding: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="togglePanels">Toggle Image Panels</button>
+    <div id="imageGallery"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const apiURL =
+          "https://api.unsplash.com/photos/random?count=9&client_id=YOUR_ACCESS_KEY";
+
+        function fetchImages() {
+          $.getJSON(apiURL, function (data) {
+            data.forEach((imgData) => {
+              const panel = $('<div class="panel">')
+                .append(
+                  `<img src="${imgData.urls.regular}" alt="${imgData.alt_description}">`
+                )
+                .append(
+                  `<div>${
+                    imgData.description || "No description available."
+                  }</div>`
+                );
+              $("#imageGallery").append(panel);
+            });
+          });
+        }
+
+        $("#togglePanels").click(function () {
+          $(".panel").slideToggle();
+        });
+
+        fetchImages();
+      });
+    </script>
+  </body>
+</html>

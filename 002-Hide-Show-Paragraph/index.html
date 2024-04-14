@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#hideButton").click(function () {
+          $("p").hide(1000);
+        });
+        $("#showButton").click(function () {
+          $("p").show(1000);
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button id="hideButton">Hide</button>
+    <button id="showButton">Show</button>
+
+    <p>This is a paragraph with little content.</p>
+    <p>This is another small paragraph.</p>
+  </body>
+</html>

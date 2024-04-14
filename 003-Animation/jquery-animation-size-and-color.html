@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Include jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Include jQuery UI Library for Color Animations -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("div").animate(
+            {
+              width: "200px",
+              height: "200px",
+              backgroundColor: "#0000FF", // Blue color in hex format
+            },
+            1000
+          ); // Duration of animation: 1000 milliseconds (1 second)
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Click here to Start Animation</button>
+
+    <p>
+      HTML elements have a static position by default.
+      <br />
+      To manipulate properties as size and color, check that the initial styles
+      of them are set properly!
+    </p>
+
+    <div
+      style="background: red; height: 100px; width: 100px; position: relative"
+    ></div>
+  </body>
+</html>

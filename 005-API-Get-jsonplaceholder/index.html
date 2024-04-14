@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Call with jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Posts</h1>
+    <div id="posts"></div>
+
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            var posts = $("#posts");
+            $.each(data, function (key, post) {
+              posts.append(
+                "<h2>" + post.title + "</h2><p>" + post.body + "</p>"
+              );
+            });
+          },
+          error: function (request, errorType, errorMessage) {
+            alert("Error: " + errorType + " with message: " + errorMessage);
+          },
+          timeout: 3000, // sets timeout to 3 seconds
+        });
+      });
+    </script>
+  </body>
+</html>

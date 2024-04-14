@@ -1,0 +1,37 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.color-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: #ffd700;
+  transition: background-color 0.5s ease;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #555;
+}
