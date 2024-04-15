@@ -1,0 +1,30 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+.descendants {
+  width: 500px;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.descendants p {
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  color: #666;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.descendants p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.prefered {
+  border-color: #d32f2f; /* Red accent for preferred items */
+}
